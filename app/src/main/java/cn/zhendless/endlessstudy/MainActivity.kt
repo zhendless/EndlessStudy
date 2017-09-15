@@ -1,8 +1,9 @@
 package cn.zhendless.endlessstudy
 
+import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
+import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
@@ -50,7 +51,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         when (item.itemId) {
-            R.id.action_settings -> return true
+            R.id.action_settings -> {
+                return true
+            }
+            R.id.action_new_activity -> {
+                startOtherMainActivity()
+                return true
+            }
             else -> return super.onOptionsItemSelected(item)
         }
     }
@@ -80,5 +87,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    fun startOtherMainActivity() {
+        val intent = Intent()
+        intent.setClass(this@MainActivity, OtherMainActivity::class.java)
+        startActivity(intent)
     }
 }
