@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import cn.zhendless.utils.QrCodeUtil
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
@@ -93,5 +94,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val intent = Intent()
         intent.setClass(this@MainActivity, OtherMainActivity::class.java)
         startActivity(intent)
+    }
+
+    /**
+     * 生成300张纯色图片
+     * */
+    fun generateOneColorPicture() {
+        for (i in 0..300) {
+            val bitmap = QrCodeUtil.generateOneColorPicture(6110, 8110)
+            val dirStr: String = QrCodeUtil.getDefaultDir()
+            QrCodeUtil.saveBitmapAsJpg(dirStr, "Pic_$i.jpg", bitmap)
+            bitmap.recycle()
+        }
     }
 }
