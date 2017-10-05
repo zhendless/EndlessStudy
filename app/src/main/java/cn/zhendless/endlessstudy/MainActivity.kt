@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     /**
-     * 生成300张纯色图片
+     * 生成300张纯色图片，给媳妇测试用
      * */
     fun generateOneColorPicture() {
         for (i in 0..300) {
