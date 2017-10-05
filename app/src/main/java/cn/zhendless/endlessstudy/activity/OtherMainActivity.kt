@@ -1,8 +1,9 @@
-package cn.zhendless.endlessstudy
+package cn.zhendless.endlessstudy.activity
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
+import cn.zhendless.endlessstudy.R
 import kotlinx.android.synthetic.main.activity_main_other.*
 
 class OtherMainActivity : AppCompatActivity() {

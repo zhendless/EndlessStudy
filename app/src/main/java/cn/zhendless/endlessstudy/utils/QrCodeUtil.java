@@ -1,4 +1,4 @@
-package cn.zhendless.utils;
+package cn.zhendless.endlessstudy.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;

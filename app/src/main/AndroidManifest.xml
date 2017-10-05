@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".EndlessStudyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -12,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -23,11 +24,14 @@
         </activity>
 
         <activity
-            android:name=".OtherMainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme">
+            android:name=".activity.OtherMainActivity"
+            android:label="OtherMainActivity"
+            android:theme="@style/AppTheme" />
 
-        </activity>
+        <activity
+            android:name=".activity.RecyclerViewStudyActivity"
+            android:label="RecyclerViewStudyActivity"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
