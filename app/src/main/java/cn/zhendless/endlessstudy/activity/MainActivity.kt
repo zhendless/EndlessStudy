@@ -9,6 +9,8 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ListView
 import cn.zhendless.endlessstudy.R
 import cn.zhendless.endlessstudy.adapter.StudyContentAdapter
@@ -96,7 +98,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    fun startOtherMainActivity() {
+    private fun startOtherMainActivity() {
         val intent = Intent()
         intent.setClass(this@MainActivity, OtherMainActivity::class.java)
         startActivity(intent)
@@ -122,15 +124,29 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         studyContentList.add(getNewStudyContentBean("Recycler View Study", RecyclerViewStudyActivity::class.java))
         val adapter = StudyContentAdapter()
 
-        findViewById<ListView>(R.id.listView_study_content)
-
         adapter.setContext(this)
         adapter.setDataList(studyContentList)
         adapter.notifyDataSetChanged()
         listView_study_content.adapter = adapter
+        listView_study_content.onItemClickListener = mOnStudyItemClickListener
     }
 
     private fun getNewStudyContentBean(contentName: String, contentClass: Class<*>): StudyContentBean {
         return StudyContentBean(contentName, contentClass)
+    }
+
+    private val mOnStudyItemClickListener = OnStudyItemClickListener()
+
+    private inner class OnStudyItemClickListener : AdapterView.OnItemClickListener {
+        override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+            if (null != parent) {
+                val adapter = parent.adapter as StudyContentAdapter
+                val className = adapter.getItem(position).mContentClass
+                val intent = Intent()
+                intent.setClass(this@MainActivity, className)
+                this@MainActivity.startActivity(intent)
+            }
+        }
+
     }
 }
