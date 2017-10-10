@@ -11,7 +11,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
-import android.widget.ListView
 import cn.zhendless.endlessstudy.R
 import cn.zhendless.endlessstudy.adapter.StudyContentAdapter
 import cn.zhendless.endlessstudy.bean.StudyContentBean
@@ -116,17 +115,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
+    /**
+     * add new study content in this method
+     * */
     private fun initDataList() {
         val studyContentList: MutableList<StudyContentBean> = ArrayList()
         studyContentList.add(getNewStudyContentBean("Recycler View Study", RecyclerViewStudyActivity::class.java))
-        studyContentList.add(getNewStudyContentBean("Recycler View Study", RecyclerViewStudyActivity::class.java))
-        studyContentList.add(getNewStudyContentBean("Recycler View Study", RecyclerViewStudyActivity::class.java))
-        studyContentList.add(getNewStudyContentBean("Recycler View Study", RecyclerViewStudyActivity::class.java))
-        val adapter = StudyContentAdapter()
 
+        val adapter = StudyContentAdapter()
         adapter.setContext(this)
         adapter.setDataList(studyContentList)
-        adapter.notifyDataSetChanged()
         listView_study_content.adapter = adapter
         listView_study_content.onItemClickListener = mOnStudyItemClickListener
     }
@@ -141,12 +139,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
             if (null != parent) {
                 val adapter = parent.adapter as StudyContentAdapter
-                val className = adapter.getItem(position).mContentClass
+                val bean = adapter.getItem(position)
+                val className = bean.mContentClass
                 val intent = Intent()
                 intent.setClass(this@MainActivity, className)
                 this@MainActivity.startActivity(intent)
             }
         }
-
     }
 }

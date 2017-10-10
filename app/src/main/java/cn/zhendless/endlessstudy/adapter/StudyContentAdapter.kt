@@ -45,7 +45,7 @@ class StudyContentAdapter : BaseAdapter() {
     }
 
     override fun getItem(position: Int): StudyContentBean {
-        if (mStudyContentBeanList.size >= position) {
+        if (mStudyContentBeanList.size <= position) {
             Log.e(TAG, "StudyContentAdapter -> getItem, position out of index!")
             return StudyContentBean("unknown", OtherMainActivity::class.java)
         }
