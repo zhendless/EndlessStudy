@@ -60,10 +60,31 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // as you specify a parent activity in AndroidManifest.xml.
         when (item.itemId) {
             R.id.action_settings -> {
+                startSettingsOtherMainActivity()
                 return true
             }
             R.id.action_new_activity -> {
                 startOtherMainActivity()
+                return true
+            }
+            R.id.action_login_activity -> {
+                startLoginActivity()
+                return true
+            }
+            R.id.action_full_screen_activity -> {
+                startFullScreenActivity()
+                return true
+            }
+            R.id.action_load_ads_activity -> {
+                startLoadAdsActivity()
+                return true
+            }
+            R.id.action_scrolling_activity -> {
+                startScrollingActivity()
+                return true
+            }
+            R.id.action_tab_main_activity -> {
+                startTabMainActivity()
                 return true
             }
             else -> return super.onOptionsItemSelected(item)
@@ -97,9 +118,45 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
+    private fun startSettingsOtherMainActivity() {
+        val intent = Intent()
+        intent.setClass(this@MainActivity, SettingsActivity::class.java)
+        startActivity(intent)
+    }
+
     private fun startOtherMainActivity() {
         val intent = Intent()
         intent.setClass(this@MainActivity, OtherMainActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun startLoginActivity() {
+        val intent = Intent()
+        intent.setClass(this@MainActivity, LoginActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun startFullScreenActivity() {
+        val intent = Intent()
+        intent.setClass(this@MainActivity, FullscreenActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun startLoadAdsActivity() {
+        val intent = Intent()
+        intent.setClass(this@MainActivity, LoadAdsActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun startScrollingActivity() {
+        val intent = Intent()
+        intent.setClass(this@MainActivity, ScrollingActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun startTabMainActivity() {
+        val intent = Intent()
+        intent.setClass(this@MainActivity, TabMainActivity::class.java)
         startActivity(intent)
     }
 

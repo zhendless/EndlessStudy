@@ -42,10 +42,38 @@
             android:name=".activity.RecyclerViewLikeGridViewActivity"
             android:label="RecyclerViewLikeListViewActivity"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="LoginActivity"
+            android:theme="@style/AppTheme" />
 
         <activity
             android:name=".activity.RecyclerViewCustomViewActivity"
             android:label="RecyclerViewLikeListViewActivity"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".activity.FullscreenActivity"
+            android:label="FullscreenActivity"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".activity.LoadAdsActivity"
+            android:label="LoadAdsActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.ScrollingActivity"
+            android:label="ScrollingActivity"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".activity.SettingsActivity"
+            android:label="SettingsActivity"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".activity.TabMainActivity"
+            android:label="TabMainActivity"
             android:theme="@style/AppTheme" />
 
     </application>

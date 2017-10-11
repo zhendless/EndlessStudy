@@ -11,4 +11,31 @@
         android:orderInCategory="100"
         android:title="Other Activity"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_login_activity"
+        android:orderInCategory="100"
+        android:title="Login Activity"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_full_screen_activity"
+        android:orderInCategory="100"
+        android:title="Full Screen Activity"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_load_ads_activity"
+        android:orderInCategory="100"
+        android:title="Load Ads Activity"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_scrolling_activity"
+        android:orderInCategory="100"
+        android:title="Scrolling Activity"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_tab_main_activity"
+        android:orderInCategory="100"
+        android:title="Tab Main Activity"
+        app:showAsAction="never" />
 </menu>
