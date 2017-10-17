@@ -11,7 +11,7 @@ class EndlessStudyApplication : Application() {
         initTools()
     }
 
-    fun initTools() {
+    private fun initTools() {
         CrashHandler.getInstance().init()
     }
 

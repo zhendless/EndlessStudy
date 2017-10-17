@@ -1,24 +1,7 @@
-/*
- * Name        : LogTracer.java
- * Classes     : LogTracer
- * Version     : 1.0
- * Date        : 13-9-16
- *
- * Copyright 2013 CMCC.  All rights reserved.
- * This material, including documentation and any related computer
- * programs, is protected by copyright controlled by CMCC.  All
- * rights are reserved.  Copying, including reproducing, storing,
- * adapting or translating, any or all of this material requires the
- * prior written consent of CMCC.  This material also contains
- * confidential information which may not be disclosed to others
- * without the prior written consent of CMCC.
- */
-package cn.papayamobile.log;
+package cn.zhendless.library.log;
 
 import android.content.Context;
 import android.os.Environment;
-
-import com.cmcc.datiba.utils.DTBConstants;
 
 import java.io.File;
 
@@ -44,7 +27,7 @@ public class LogTracer {
             folder = context.getFilesDir();
         }
 
-        mLogger.setFileFolder(DTBConstants.LOG_FILE_FOLDER_NAME);
+        mLogger.setFileFolder(folder.getAbsolutePath());
         mLogger.addLogOutput(LogOutputType.FILE_LOG_OUTPUT);
         mLogger.addLogOutput(LogOutputType.CONSOLE_LOG_OUTPUT);
     }

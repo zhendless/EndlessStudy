@@ -1,19 +1,4 @@
-/*
- * Name        : FileLogOutput.java
- * Classes     : FileLogOutput
- * Version     : 1.0
- * Date        : 13-9-16
- *
- * Copyright 2013 CMCC.  All rights reserved.
- * This material, including documentation and any related computer
- * programs, is protected by copyright controlled by CMCC.  All
- * rights are reserved.  Copying, including reproducing, storing,
- * adapting or translating, any or all of this material requires the
- * prior written consent of CMCC.  This material also contains
- * confidential information which may not be disclosed to others
- * without the prior written consent of CMCC.
- */
-package cn.papayamobile.log;
+package cn.zhendless.library.log;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -29,8 +14,8 @@ public class FileLogOutput extends LogOutput {
     private long mFileSize;
     private static final int LOG_MAXSIZE = 1 * 1024 * 1024;
     private Object lockObj = new Object();
-    Calendar mDate = Calendar.getInstance();
-    StringBuffer mBuffer = new StringBuffer();
+    private Calendar mDate = Calendar.getInstance();
+    private StringBuffer mBuffer = new StringBuffer();
 
     public FileLogOutput() {
         super(LogOutputType.FILE_LOG_OUTPUT);

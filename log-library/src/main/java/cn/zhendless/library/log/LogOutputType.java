@@ -1,4 +1,4 @@
-package cn.papayamobile.log;
+package cn.zhendless.library.log;
 
 public class LogOutputType {
     public static final int CONSOLE_LOG_OUTPUT = 1;
